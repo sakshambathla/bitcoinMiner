@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BitcoinMiner", "BitcoinMiner\BitcoinMiner.fsproj", "{56BF00F6-F4C0-4CD0-83E9-03F52EF740B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56BF00F6-F4C0-4CD0-83E9-03F52EF740B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BF00F6-F4C0-4CD0-83E9-03F52EF740B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56BF00F6-F4C0-4CD0-83E9-03F52EF740B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BF00F6-F4C0-4CD0-83E9-03F52EF740B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D19ADE85-F866-4ED3-8930-4A7038E7A4BD}
+	EndGlobalSection
+EndGlobal
