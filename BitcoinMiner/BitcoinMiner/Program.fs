@@ -55,14 +55,16 @@ let main argv =
     let inithash = StringToHash "bathlasaksham"
     let pref = "bathlasaksham"
     let numOfActors = pcount
-    let max = 1000000000
+    let max = 10000000
     let taskSize = max/numOfActors
     let proc = Process.GetCurrentProcess()
     let cpuTimeStamp = proc.TotalProcessorTime
     let timer = Stopwatch()
     timer.Start()
     for i in 1..numOfActors do
-        system.ActorOf(Props(typedefof<Worker>, [| string(id) :> obj |])) <! (inithash,pref,numZeros,(i-1)*taskSize+1, i*taskSize)
+        let myActor = system.ActorOf(Props(typedefof<Worker>, [| string(id) :> obj |])) //<! (inithash,pref,numZeros,(i-1)*taskSize+1, i*taskSize)
+        for j in 1..100 do
+            myActor <! (inithash,pref,numZeros,(i-1)*taskSize+1 + (j-1)*taskSize/100 , i*taskSize + j*taskSize/100)
     //System.Console.ReadLine() |> ignore
     system.Terminate()
     system.WhenTerminated.Wait()
