@@ -30,8 +30,9 @@ Group Members:-
   Essentially each actor is provided with a prefix string ("bathlasaksham") and the min and max nonce to attach the nonce to the existing string and check 
   the hash for preceding zeroes
   
-  Distributed Implementation:-
- ![diagram_1](https://user-images.githubusercontent.com/24275651/134545918-1dd970e4-bd70-4fa6-b69d-3a2bf3dd4c16.jpg)
+  #### Distributed Implementation:-
+ 
+  ![diagram_1](https://user-images.githubusercontent.com/24275651/134545918-1dd970e4-bd70-4fa6-b69d-3a2bf3dd4c16.jpg)
     
   Client, upon startup, creates a list of Worker actors and sends a FirstContact message to the server with its identifier and reference to the list of workers. 
   Server, in return, (whether or not it is working on a local task or not) sends a mining task to each of the remote workers
@@ -116,9 +117,8 @@ Group Members:-
           Absolute time = 256301ms
           ratio: 4.579192
 
-   5.) Largest no of machines we were able to run this code on: 3 (one i5 quad core, one apple m1 and one ryzen 5 hexa core ) 
-        We had access to only three machines. It can scale over 3 very easily
-        we faced some challenges in utilizing concurrency properly on an Apple mac m1 machine. It is possibly due to macOS load
-        distribution on different types of cores within the M1 chip. 
+   5.) Largest no of machines we were able to run this code on: 3 (one i5 quad core, one apple m1 and one ryzen 5 hexa core) 
+       We had access to only three machines. It can scale over 3 very easily
+      
   
    
