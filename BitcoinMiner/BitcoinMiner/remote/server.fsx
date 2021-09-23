@@ -32,7 +32,7 @@ let configuration =
             remote {
                 helios.tcp {
                     port = 8080
-                    hostname = 127.0.0.1
+                    hostname = 10.20.0.250
                 }
             }
         }")
@@ -70,7 +70,6 @@ type Worker(name) =
                     if checkBitcoin newStr difficulty then 
                         let minedhash = StringToHash newStr
                         printfn "%s %s " newStr minedhash
-                        this.Sender <! (newStr, minedhash)
 
 let mutable numRemoteActors = 0
 let mutable remoteActors =[]
