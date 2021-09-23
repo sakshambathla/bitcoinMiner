@@ -77,7 +77,7 @@ let mutable remoteActors =[]
 let previousHash = StringToHash "bathlasaksham"
 let prefix = "bathlasaksham"
 let st = 1
-let ed = 10000000
+let mutable ed = 10000000
 let numOfActors = Environment.ProcessorCount
 let task = (ed - st)/(numOfActors)
 let numZeros = fsi.CommandLineArgs.[1] |> int
@@ -102,9 +102,11 @@ let serverSupervisor =
                     let (clientStr, numWorkers, actors) = unbox<FirstContact> message
                     numRemoteActors <- numWorkers
                     remoteActors <- remoteActors |> List.append actors
+                    let newEd = ed
+                    ed <- ed + task*numRemoteActors
                     if numRemoteActors > 0 then
                         for i=1 to numRemoteActors do
-                            let remoteHash = previousHash + (ed |> string)
+                            let remoteHash = previousHash + (newEd |> string)
                             remoteActors.Item(i-1) <! (remoteHash, prefix, numZeros, (i-1)*task+1, i*task)
                 
                 // Bitcoins found at the remote servers
