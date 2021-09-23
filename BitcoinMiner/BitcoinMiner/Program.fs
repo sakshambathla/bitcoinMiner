@@ -1,6 +1,4 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
+﻿open System
 open System.Security.Cryptography
 open System.Text
 open Akka.Actor
@@ -12,6 +10,8 @@ let system = System.create "BitcoinMiner" <| Configuration.defaultConfig()
 
 type MiningInput = string*string*int*int*int
 
+
+// Returns the SHA256 hash in string form
 let StringToHash = fun (mystring: string) ->
     let crypt = SHA256Managed.Create()
     let myhash = StringBuilder()
@@ -20,7 +20,7 @@ let StringToHash = fun (mystring: string) ->
         myhash.Append(currByte.ToString("x2"))
     myhash.ToString()
     
-
+// Check bitcoin functions takes a string and number of zeroes as input and tells if the string is a bitcoin
 let checkBitcoin = fun (mystring: string) (numzeroes: int) ->
     let myHash = StringToHash(mystring)
     let mutable continueLooping = true
@@ -32,6 +32,8 @@ let checkBitcoin = fun (mystring: string) (numzeroes: int) ->
         else continueLooping <- false
     (counter >= numzeroes)
 
+// Nonce (integer) is used to generate a new string to test for bitcoin.
+// Nonce is used instead of randomization to avoid repetetive work in different actors
 let mine = fun (existingHash: string) (pref: string) (difficulty: int) (minNonce: int) (maxNonce: int) ->
     for i = minNonce to maxNonce do
         let newStr = pref + existingHash + i.ToString()
@@ -39,6 +41,7 @@ let mine = fun (existingHash: string) (pref: string) (difficulty: int) (minNonce
             let minedhash = StringToHash newStr
             printfn "%s %s" newStr minedhash
 
+// Worker Actor
 type Worker(name) =
     inherit Actor()
         override this.OnReceive message = 
@@ -55,17 +58,15 @@ let main argv =
     let inithash = StringToHash "bathlasaksham"
     let pref = "bathlasaksham"
     let numOfActors = pcount
-    let max = 10000000
+    let max = 2000000000
     let taskSize = max/numOfActors
     let proc = Process.GetCurrentProcess()
     let cpuTimeStamp = proc.TotalProcessorTime
     let timer = Stopwatch()
     timer.Start()
     for i in 1..numOfActors do
-        let myActor = system.ActorOf(Props(typedefof<Worker>, [| string(id) :> obj |])) //<! (inithash,pref,numZeros,(i-1)*taskSize+1, i*taskSize)
-        for j in 1..100 do
-            myActor <! (inithash,pref,numZeros,(i-1)*taskSize+1 + (j-1)*taskSize/100 , i*taskSize + j*taskSize/100)
-    //System.Console.ReadLine() |> ignore
+        system.ActorOf(Props(typedefof<Worker>, [| string(id) :> obj |])) <! (inithash,pref,numZeros,(i-1)*taskSize+1, i*taskSize)
+
     system.Terminate()
     system.WhenTerminated.Wait()
     let cpuTime = (proc.TotalProcessorTime-cpuTimeStamp).TotalMilliseconds
@@ -73,4 +74,4 @@ let main argv =
     printfn "Absolute time = %dms" timer.ElapsedMilliseconds
     let ratio = float (int64 cpuTime)/ float timer.ElapsedMilliseconds
     printfn "ratio: %f"  ratio
-    0 // return an integer exit code
+    0

@@ -39,6 +39,21 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Akka": {
+              "target": "Package",
+              "version": "[1.4.25, )",
+              "generatePathProperty": true
+            },
+            "Akka.Cluster": {
+              "target": "Package",
+              "version": "[1.4.25, )",
+              "generatePathProperty": true
+            },
+            "Akka.Configuration": {
+              "target": "Package",
+              "version": "[1.0.5835.36887, )",
+              "generatePathProperty": true
+            },
             "Akka.FSharp": {
               "target": "Package",
               "version": "[1.4.25, )",

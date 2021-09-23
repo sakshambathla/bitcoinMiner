@@ -18,6 +18,9 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\bathl\.nuget\packages\fsharp.core\5.0.0</PkgFSharp_Core>
+    <PkgAkka Condition=" '$(PkgAkka)' == '' ">C:\Users\bathl\.nuget\packages\akka\1.4.25</PkgAkka>
     <PkgAkka_FSharp Condition=" '$(PkgAkka_FSharp)' == '' ">C:\Users\bathl\.nuget\packages\akka.fsharp\1.4.25</PkgAkka_FSharp>
+    <PkgAkka_Configuration Condition=" '$(PkgAkka_Configuration)' == '' ">C:\Users\bathl\.nuget\packages\akka.configuration\1.0.5835.36887</PkgAkka_Configuration>
+    <PkgAkka_Cluster Condition=" '$(PkgAkka_Cluster)' == '' ">C:\Users\bathl\.nuget\packages\akka.cluster\1.4.25</PkgAkka_Cluster>
   </PropertyGroup>
 </Project>

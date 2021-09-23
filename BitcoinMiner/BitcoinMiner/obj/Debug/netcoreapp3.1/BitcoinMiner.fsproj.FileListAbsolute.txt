@@ -42,3 +42,16 @@ C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.
 C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\Akka.Cluster.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\Akka.Configuration.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\Akka.Coordination.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\Akka.Remote.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\DotNetty.Buffers.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\DotNetty.Codecs.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\DotNetty.Common.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\DotNetty.Handlers.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\DotNetty.Transport.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\bathl\Documents\proj_1\BitcoinMiner\BitcoinMiner\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
