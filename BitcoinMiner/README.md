@@ -1,11 +1,15 @@
-**COP-5615 PROJECT 1**
+# **COP-5615 PROJECT 1**
+
 Group Members:- 
-Saksham Bathla  UFID: 82967553
-Arnav Gaur      UFID: 83249716
 
-**Bitcoin Miner**
+    Saksham Bathla  UFID: 82967553
 
-**How to Run:**
+    Arnav Gaur      UFID: 83249716
+
+
+## **Bitcoin Miner**
+
+### **How to Run:**
 
   Single Machine:-
     
@@ -21,19 +25,19 @@ Arnav Gaur      UFID: 83249716
       dotnet fsi remote/client.fsx 10.20.0.250 (the ip is the server ip)
 
 
-**Implementation**
+### **Implementation**
   We have used the concept of cryptographic nonce for generating unique strings and distributing the task load among the actors equally.
   Essentially each actor is provided with a prefix string ("bathlasaksham") and the min and max nonce to attach the nonce to the existing string and check 
   the hash for preceding zeroes
   
   Distributed Implementation:-
-    ![diagram_1](https://user-images.githubusercontent.com/24275651/134545918-1dd970e4-bd70-4fa6-b69d-3a2bf3dd4c16.jpg)
+ ![diagram_1](https://user-images.githubusercontent.com/24275651/134545918-1dd970e4-bd70-4fa6-b69d-3a2bf3dd4c16.jpg)
     
-    Client, upon startup, creates a list of Worker actors and sends a FirstContact message to the server with its identifier and reference to the list of workers. 
-    Server, in return, (whether or not it is working on a local task or not) sends a mining task to each of the remote workers
-    Remote worker, during working on the tasks, sends any successfully mined hash and string to the server as and when it finds one and continues working. 
+  Client, upon startup, creates a list of Worker actors and sends a FirstContact message to the server with its identifier and reference to the list of workers. 
+  Server, in return, (whether or not it is working on a local task or not) sends a mining task to each of the remote workers
+  Remote worker, during working on the tasks, sends any successfully mined hash and string to the server as and when it finds one and continues working. 
 
-**Assignment Questions**
+### **Assignment Questions**
 
   1.) Size of the work unit that you determined: The optimal workunit was anything between 1000000 and 100000000. Below 10000000, there was not enough tasks at each worker 
       to utilize concurrency, above 10000000, workers took too long and throttled the CPU
