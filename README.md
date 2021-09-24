@@ -41,7 +41,7 @@ Group Members:-
 ### **Assignment Questions**
 
   1.) Size of the work unit that you determined: The optimal workunit was anything between 1000000 and 100000000. Below 10000000, there was not enough tasks at each worker 
-      to utilize concurrency, above 10000000, workers took too long and throttled the CPU
+      to utilize concurrency, above 10000000, workers took too long and throttled the CPU. In general, the number of actors was kept two times the number of processors.
   
   2.) The result of running your program for input 4: (on a windows Quad core i5 machine)
 
